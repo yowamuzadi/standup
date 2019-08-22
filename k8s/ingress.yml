@@ -6,8 +6,12 @@ metadata:
   labels:
     app: standup${HASH_BRANCH_NAME}
     branch: standup${HASH_BRANCH_NAME}
+    app.gitlab.com/app: ${CI_PROJECT_PATH_SLUG}
+    app.gitlab.com/env: ${CI_ENVIRONMENT_SLUG}
   annotations:
     kubernetes.io/ingress.class: "azure/application-gateway"
+    app.gitlab.com/app: ${CI_PROJECT_PATH_SLUG}
+    app.gitlab.com/env: ${CI_ENVIRONMENT_SLUG}
 spec:
   rules:
   - host: ${INGRESS_ENVIRONMENT_PREFIX}standup.${DOMAIN_NAME}

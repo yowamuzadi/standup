@@ -6,6 +6,11 @@ metadata:
   labels:
     app: standup${HASH_BRANCH_NAME}
     branch: standup${HASH_BRANCH_NAME}
+    app.gitlab.com/app: ${CI_PROJECT_PATH_SLUG}
+    app.gitlab.com/env: ${CI_ENVIRONMENT_SLUG}
+  annotations:
+    app.gitlab.com/app: ${CI_PROJECT_PATH_SLUG}
+    app.gitlab.com/env: ${CI_ENVIRONMENT_SLUG}
 spec:
   selector:
     app: standup${HASH_BRANCH_NAME}
